@@ -1,0 +1,50 @@
+.user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.user .user-picture {
+    position: relative;
+    margin: 0 20px 0 0;
+}
+.user .user-picture img{
+    display:block;
+    border:2px solid #ccc;
+}
+.user .user-picture .male, .user .user-picture .female{
+    width:20px;
+    height:20px;
+    background-image: url('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/24/Male-icon.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left:5px;
+    top:5px;
+}
+.user .user-picture .female{
+    background-image: url('http://icons.iconarchive.com/icons/custom-icon-design/flatastic-7/24/Female-icon.png');
+}
+
+.user .user-name {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.user .parametr {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 5px 0;
+}
+
+.user .parametr .label {
+    color: #777;
+    margin-right: 10px;
+}
+
+.load-more{
+    height:100px;
+    background: url('https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif') center no-repeat;
+}
