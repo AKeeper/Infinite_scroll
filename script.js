@@ -9,7 +9,26 @@ class User {
         this.registered = registered;
     }
 }
+class ScrollObserver {
+    init(target, loadMore) {
+        const options = {
+            rootMargin: '0px'
+        };
 
+        function callback(entries) {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                return;
+            }
+
+            loadMore();
+        });
+        }
+        const observer = new IntersectionObserver(callback, options);
+
+        observer.observe(target);
+    }
+}
 class ApiService {
     getData(page, items) {
         const API_URL = page ? `https://randomuser.me/api/?page=${page}&results=${items}` :
@@ -90,26 +109,7 @@ function log(...args) {
     console.log(...args);
 }
 
-class ScrollObserver {
-    init(target, loadMore) {
-        const options = {
-            rootMargin: '0px'
-        };
 
-        function callback(entries) {
-            entries.forEach((entry) => {
-                if (!entry.isIntersecting) {
-                return;
-            }
-
-            loadMore();
-        });
-        }
-        const observer = new IntersectionObserver(callback, options);
-
-        observer.observe(target);
-    }
-}
 
 class Main {
     static init() {
